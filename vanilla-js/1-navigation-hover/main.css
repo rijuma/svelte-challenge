@@ -1,0 +1,107 @@
+:root {
+  --link-color: #fff;
+  --root-font-size: 87.5%;
+
+  --background-gradient-a: #000015;
+  --background-gradient-b: #030c3f;
+
+  --link-marker-thickness: 0.5rem;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+html {
+  font-size: var(--root-font-size);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(
+    circle at center 300%,
+    var(--background-gradient-b),
+    var(--background-gradient-b) 65%,
+    var(--background-gradient-a) 80%,
+    var(--background-gradient-a) 85%
+  );
+}
+
+.main-nav ul {
+  font-size: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  list-style: none;
+  position: relative;
+}
+
+.main-nav a {
+  display: block;
+  opacity: 0.5;
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+  padding-inline-start: 1.5rem;
+  letter-spacing: 0.1ch;
+}
+
+.main-nav .active a {
+  opacity: 1;
+}
+
+.main-nav .active::after {
+  view-transition-name: main-nav-dash;
+  content: "";
+  position: absolute;
+  inset: auto auto 50% 0;
+  width: var(--link-marker-thickness);
+  height: 80%;
+  background: var(--link-color);
+  border-radius: 99rem;
+  transform: translateY(50%);
+}
+
+@media only screen and (min-width: 60rem) {
+  :root {
+    --root-font-size: 100%;
+  }
+
+  .main-nav ul {
+    flex-direction: row;
+    gap: 6rem;
+  }
+
+  .main-nav a {
+    text-align: center;
+    padding: 0 0 2.875rem;
+  }
+
+  .main-nav .active::after {
+    inset: auto auto 0 50%;
+    width: 50%;
+    height: var(--link-marker-thickness);
+    background: var(--link-color);
+    border-radius: 99rem;
+    transform: translateX(-50%);
+  }
+}
