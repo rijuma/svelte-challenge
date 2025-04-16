@@ -36,14 +36,14 @@ body {
   aspect-ratio: 1 / 1;
   width: 19rem;
   height: 19rem;
-  padding: 3.5rem;
+  padding: 3.75rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   background: var(--card-bg);
-  border: 1px solid red;
   color: var(--logo-color);
-  border-radius: 8rem;
+  border-radius: 8.5rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 /*
@@ -51,8 +51,8 @@ body {
  */
 .bing-logo svg {
   position: relative;
-  left: 0.6rem;
-  top: 0.1rem;
+  left: 0.8rem;
+  top: 0.4rem;
 }
 
 .bing-logo figcaption {
