@@ -1,10 +1,15 @@
 :root {
   --logo-color: #505050;
   --card-bg: #fff;
+  --root-font-size: 75%; /* 12px */
 }
 
 @view-transition {
   navigation: auto;
+}
+
+html {
+  font-size: var(--root-font-size);
 }
 
 html,
@@ -33,17 +38,36 @@ body {
 }
 
 .bing-logo {
-  aspect-ratio: 1 / 1;
-  width: 19rem;
-  height: 19rem;
-  padding: 3.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: block;
   background: var(--card-bg);
   color: var(--logo-color);
   border-radius: 8.5rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  transition: all 0.5s ease;
+  transform: scale(1);
+
+  @starting-style {
+    box-shadow: none;
+    background: transparent;
+    transform: scale(0.5);
+  }
+}
+
+.bing-logo:hover {
+  transform-origin: center center;
+  transform: scale(1.025);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+}
+
+.bing-logo figure {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 19rem;
+  height: 19rem;
+  padding: 3rem 1.5rem;
+  aspect-ratio: 1 / 1;
 }
 
 /*
@@ -51,8 +75,8 @@ body {
  */
 .bing-logo svg {
   position: relative;
-  left: 0.8rem;
-  top: 0.4rem;
+  left: 12px;
+  top: 6px;
 }
 
 .bing-logo figcaption {
@@ -63,4 +87,10 @@ body {
 .bing-logo img {
   width: 100%;
   height: auto;
+}
+
+@media only screen and (min-width: 60rem) {
+  :root {
+    --root-font-size: 100%; /* 16px */
+  }
 }

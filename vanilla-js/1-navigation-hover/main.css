@@ -1,6 +1,6 @@
 :root {
   --link-color: #fff;
-  --root-font-size: 87.5%;
+  --root-font-size: 87.5%; /* 14px */
 
   --background-gradient-a: #000015;
   --background-gradient-b: #030c3f;
@@ -83,7 +83,7 @@ body {
 
 @media only screen and (min-width: 60rem) {
   :root {
-    --root-font-size: 100%;
+    --root-font-size: 100%; /* 16px */
   }
 
   .main-nav ul {
