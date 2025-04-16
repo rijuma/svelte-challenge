@@ -69,7 +69,7 @@ body {
   opacity: 1;
 }
 
-.main-nav .active::after {
+.main-nav a::after {
   view-transition-name: main-nav-dash;
   content: "";
   position: absolute;
@@ -79,6 +79,21 @@ body {
   background: var(--link-color);
   border-radius: 99rem;
   transform: translateY(50%);
+  display: none;
+}
+
+.main-nav .active a::after {
+  display: block;
+}
+
+.no-vt .main-nav a::after {
+  transition: opacity 0.25s ease;
+  display: block;
+  opacity: 0;
+}
+
+.no-vt .main-nav .active a::after {
+  opacity: 1;
 }
 
 @media only screen and (min-width: 60rem) {
@@ -96,7 +111,7 @@ body {
     padding: 0 0 2.875rem;
   }
 
-  .main-nav .active::after {
+  .main-nav a::after {
     inset: auto auto 0 50%;
     width: 50%;
     height: var(--link-marker-thickness);

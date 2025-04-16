@@ -34,6 +34,9 @@ function init() {
   links.forEach(link => {
     link.addEventListener('click', handleMenuClick, { signal })
   })
+
+  // Let's add a class if viewTransitions is not supported by the browser.
+  if (!document?.startViewTransition) document.documentElement.classList.add('no-vt')
 }
 
 function cleanup() {
