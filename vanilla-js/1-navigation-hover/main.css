@@ -63,6 +63,11 @@ body {
   font-weight: 600;
   padding-inline-start: 1.5rem;
   letter-spacing: 0.1ch;
+  transition: opacity 0.25s ease;
+}
+
+.main-nav a:hover {
+  opacity: 0.8;
 }
 
 .main-nav .active a {

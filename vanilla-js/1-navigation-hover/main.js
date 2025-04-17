@@ -29,7 +29,7 @@ const controller = new AbortController()
 const signal = controller.signal
 
 function init() {
-  const links = document.querySelectorAll('.main-nav li')
+  const links = document.querySelectorAll('.main-nav li a')
 
   links.forEach(link => {
     link.addEventListener('click', handleMenuClick, { signal })
@@ -44,3 +44,4 @@ function cleanup() {
 }
 
 window.addEventListener('load', init)
+window.addEventListener('beforeunload', cleanup)
