@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Website tests - 1. Navigation hover</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css"
+    integrity="sha512-DzC7h7+bDlpXPDQsX/0fShhf1dLxXlHuhPBkBo/5wJWRoTU6YL7moeiNoej6q3wh5ti78C57Tu1JwTNlcgHSjg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    /> <!-- FontAwesome solid icons -->
+    <link rel="stylesheet" href="main.css" /> <!-- Main styles -->
+  </head>
+  <body>
+    <nav class="site-nav">
+      <button type="button" class="nav-menu inert">
+        <i class="menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </i>
+
+        Menu
+      </button>
+
+      <div class="lang">
+        <ul>
+          <li class="active"><a href="#">ENG</a></li>
+          <li><a href="#">FR</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section class="hero">
+        <div class="hero-front">
+          <img src="./img/01-01.jpg" alt="Short Frayed Jacket" />
+          <header class="hero-gallery-header">
+            <div class="hero-description">Summer collection 2020</div>
+
+            <div class="hero-gallery-controls">
+              <button
+                type="button"
+                id="hero-gallery-next"
+                aria-label="Next Product"
+              >
+                Next
+              </button>
+              <hr />
+              <button
+                type="button"
+                id="hero-gallery-next"
+                aria-label="Previous Product"
+              >
+                Previous
+              </button>
+            </div>
+          </header>
+
+          <h2 class="title">Summer 2020</h2>
+
+          <ul class="hero-gallery-nav">
+            <li>
+              <button type="button active" aria-selected="true">
+                <span class="sr-only"
+                  >Short Frayed Jacket - Product 1 of 3</span
+                >
+              </button>
+            </li>
+            <li>
+              <button type="button" aria-selected="false">
+                <span class="sr-only"
+                  >Another Cool Jacket - Product 2 of 3</span
+                >
+              </button>
+            </li>
+            <li>
+              <button type="button" aria-selected="false">
+                <span class="sr-only"
+                  >Yet Another Cool Jacket - Product 3 of 3</span
+                >
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="hero-more">
+          <div class="hero-article-reference">
+            <span>Ref. 6687/787</span>
+            <hr />
+            <span>Short Frayed Jacket</span>
+          </div>
+          <ul class="hero-thumbnails">
+            <li>
+              <img src="./img/01-02.jpg" alt="Alternative pose" />
+            </li>
+            <li>
+              <img src="./img/01-03.jpg" alt="Detailed article" />
+            </li>
+          </ul>
+          <div class="cta">
+            <button type="button">Shop now</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <ul>
+        <li>
+          <a
+            href="https://facebook.com/Zara"
+            title="Facebook"
+            aria-label="Open our Facebook page"
+            target="_blank"
+            rel="noopener"
+            >FB <i class="fa-solid fa-arrow-up-right-from-square"></i></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://pinterest.com/zaraofficial"
+            title="Pinterest"
+            aria-label="Open our Pinterest page"
+            target="_blank"
+            rel="noopener"
+            >PIN <i class="fa-solid fa-arrow-up-right-from-square"></i></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://instagram.com/zara"
+            title="Instagram"
+            aria-label="Open our Instagram page"
+            target="_blank"
+            rel="noopener"
+            >IG <i class="fa-solid fa-arrow-up-right-from-square"></i></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+    <script src="main.js" defer></script>
+  </body>
+</html>
