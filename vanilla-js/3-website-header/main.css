@@ -6,9 +6,11 @@
   --header-color: #fff;
   --accent-color: #000;
   --link-color: #fff;
+  --inverted-link-color: #000;
   --root-font-size: 87.5%; /* 14px */
 
-  --frame-spacing: 4rem;
+  --heading-spacing: 4rem;
+  --frame-spacing: 5.4rem;
 }
 
 @view-transition {
@@ -17,6 +19,7 @@
 
 html {
   font-size: var(--root-font-size);
+  -webkit-font-smoothing: antialiased;
 }
 
 html,
@@ -40,6 +43,16 @@ body {
   list-style: none;
 }
 
+:where(a) {
+  text-decoration: none;
+}
+
+:where(a:hover) {
+  text-decoration: underline;
+}
+
+/* Base styles */
+
 body {
   min-height: 100dvh;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
@@ -57,10 +70,27 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 1.5rem;
-  padding: var(--frame-spacing) var(--frame-spacing) 0;
+  padding: var(--heading-spacing) var(--frame-spacing) 0;
+  font-size: 1.3rem;
+  font-family: Arial, sans-serif;
 }
 
-.lang {
+.lang ul {
+  display: flex;
+  gap: 3.25rem;
+}
+
+.lang a {
+  color: var(--link-color);
+  font-weight: 600;
+  opacity: 0.4;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.lang .active a {
+  font-weight: 900;
+  opacity: 1;
 }
 
 .nav-menu {
@@ -68,8 +98,10 @@ body {
   justify-content: space-between;
   align-items: center;
   color: var(--header-color);
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
+  position: relative;
+  left: -0.5rem;
 }
 
 .menu-icon {
@@ -80,6 +112,7 @@ body {
   width: 1em;
   height: 1em;
   position: relative;
+  opacity: 0.8;
 }
 
 .menu-icon > span {
@@ -156,13 +189,17 @@ body {
 /* ### /FOOTER ### */
 
 @media only screen and (min-width: 60rem) {
+  :root {
+    --root-font-size: 100%; /* 16px */
+  }
+
   .hero {
     display: flex;
   }
 
   .hero-front {
     flex: 0;
-    flex-basis: 56%;
+    flex-basis: 60%;
   }
 
   .hero-more {
@@ -170,7 +207,7 @@ body {
     display: none;
   }
 
-  :root {
-    --root-font-size: 100%; /* 16px */
+  .lang a {
+    color: var(--inverted-link-color);
   }
 }
