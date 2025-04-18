@@ -1,3 +1,6 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  layer(normalize);
+
 :root {
   --logo-color: #505050;
   --card-bg: #fff;
@@ -41,7 +44,7 @@ body {
   display: block;
   background: var(--card-bg);
   color: var(--logo-color);
-  border-radius: 8.5rem;
+  border-radius: 9rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   text-decoration: none;
   transition: all 0.5s ease;
@@ -75,7 +78,7 @@ body {
  */
 .bing-logo svg {
   position: relative;
-  left: 12px;
+  left: 16px;
   top: 6px;
 }
 
