@@ -1,0 +1,177 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  layer(normalize);
+
+:root {
+  --text-color: #333;
+  --accent-color: #05cf6e;
+  --root-font-size: 87.5%; /* 14px */
+
+  --outline-padding: 0.25em;
+
+  --page-bg-color: #f0efea;
+
+  --panel-bg-color: #fff;
+  --panel-date-color: #aeb1dd;
+  --panel-divider-color: #f5f6fa;
+
+  --item-dimmed-color: #0004;
+
+  --form-input-border: #0002;
+  --form-action-fg-color: #fff;
+  --form-action-bg-color: var(--accent-color);
+
+  --item-done-color: var(--accent-color);
+  --item-pending-color: var(--item-dimmed-color);
+}
+
+/* Base styles */
+
+:where(button) {
+  all: unset;
+  cursor: pointer;
+  padding: var(--outline-padding);
+  white-space: nowrap;
+}
+
+:where(button:focus-visible) {
+  outline: medium auto currentColor;
+  outline: medium auto invert;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+:where(ul) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(li) {
+  list-style: none;
+}
+
+/* /Base styles */
+
+@view-transition {
+  navigation: auto;
+}
+
+html {
+  font-size: var(--root-font-size);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  background: var(--page-bg-color);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+.app {
+  background: var(--panel-bg-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  min-width: 18.8rem;
+  min-height: 31.2rem;
+}
+
+.app header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  text-align: center;
+  padding: 2rem;
+  border-block-end: 4px solid var(--panel-divider-color);
+}
+
+.app .month {
+  color: var(--text-color);
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.app .date {
+  margin: 0;
+  color: var(--panel-date-color);
+}
+
+.app .body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.app .list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 1rem;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.list .status {
+  font-size: 1.5em;
+}
+
+.list li.done .label {
+  text-decoration: line-through;
+  color: var(--item-dimmed-color);
+}
+
+.list li.done .status {
+  color: var(--item-done-color);
+}
+
+.list li.pending .status {
+  color: var(--item-pending-color);
+}
+
+.add-todo input {
+  border: 1px solid var(--form-input-border);
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.add-todo .action {
+  position: relative;
+  text-align: center;
+}
+
+.add-todo .submit {
+  position: absolute;
+  inset-block-start: 1.5rem;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  background: var(--form-action-bg-color);
+  color: var(--form-action-fg-color);
+  padding: 0.6rem 2.5rem;
+  border-radius: 99rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 0.1ch;
+}
+
+.add-todo input::placeholder {
+  color: var(--panel-date-color);
+}
+
+@media only screen and (min-width: 32rem) {
+  :root {
+    --root-font-size: 100%; /* 16px */
+  }
+}

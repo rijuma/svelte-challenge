@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Website tests - 4. To do application</title>
+    <!-- FontAwesome regular icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css"
+      integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1 class="month" id="month-label"></h1>
+        <h4 class="date" id="date-label"></h4>
+      </header>
+      <div class="body">
+        <ul class="list">
+          <li class="done">
+            <div class="label">Buy now sweatshirt</div>
+            <div class="status" aria-label="Status: Done">
+              <i class="fa-regular fa-face-smile"></i>
+            </div>
+          </li>
+          <li class="done">
+            <div class="label">Read an article</div>
+            <div class="status" aria-label="Status: Done">
+              <i class="fa-regular fa-face-smile"></i>
+            </div>
+          </li>
+          <li class="pending">
+            <div class="label">Write blog post</div>
+            <div class="status" aria-label="Status: Pending">
+              <i class="fa-regular fa-face-meh"></i>
+            </div>
+          </li>
+          <li class="pending">
+            <div class="label">Watch "Mr Robot"</div>
+            <div class="status" aria-label="Status: Pending">
+              <i class="fa-regular fa-face-meh"></i>
+            </div>
+          </li>
+          <li class="pending">
+            <div class="label">Run</div>
+            <div class="status" aria-label="Status: Pending">
+              <i class="fa-regular fa-face-meh"></i>
+            </div>
+          </li>
+        </ul>
+        <form class="add-todo">
+          <input type="text" name="task" placeholder="Add Task" />
+          <div class="action">
+            <button type="submit" class="submit">Add</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="main.js" defer></script>
+  </body>
+</html>
