@@ -12,6 +12,9 @@
 
   --heading-spacing: 3.5rem;
   --frame-spacing: min(8vw, 5.4rem);
+  --transition-delay: 0.25s;
+
+  --z-nav: 10;
 }
 
 @view-transition {
@@ -111,6 +114,7 @@ body {
   padding: var(--heading-spacing) var(--frame-spacing) 0;
   font-size: 1.3rem;
   font-family: Arial, sans-serif;
+  z-index: var(--z-nav);
 }
 
 .lang ul {
@@ -139,6 +143,11 @@ body {
   text-align: center;
   box-sizing: border-box;
   font-weight: bold;
+  transition: background var(--transition-delay) ease;
+}
+
+.shop-now:hover {
+  background: var(--text-light);
 }
 
 .nav-menu {
@@ -161,6 +170,7 @@ body {
   height: 1em;
   position: relative;
   opacity: 0.8;
+  transition: opacity var(--transition-delay) ease;
 }
 
 .menu-icon > span {
@@ -184,9 +194,13 @@ body {
   inset-block-end: var(--line-padding);
 }
 
+.nav-menu .menu-icon {
+  opacity: 1;
+}
+
 .hero-front {
   position: relative;
-  min-height: 100dvh;
+  min-height: 90dvh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -241,7 +255,7 @@ body {
 }
 
 .hero-gallery-controls hr {
-  --hover-length: 0.25s;
+  --hover-length: var(--transition-delay);
   --color-hover: var(--text-light);
   --color-idle: color-mix(in srgb, var(--color-hover), transparent 50%);
   position: relative;
@@ -345,13 +359,16 @@ body {
 
 .site-footer ul {
   display: flex;
-  gap: 2.5rem;
+  justify-content: center;
+  gap: 4rem;
+  padding-block: 2rem;
 }
 
 .site-footer a {
-  color: var(--text-light);
-  text-decoration: none;
+  color: var(--text-dark);
   opacity: 0.8;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .site-footer a:focus,
@@ -369,7 +386,48 @@ body {
   opacity: 0;
 }
 
-/* ### /FOOTER ### */
+.hero-article-reference {
+  pointer-events: none;
+  display: flex;
+  justify-content: space-around;
+  gap: 4rem;
+  font-size: min(3vw, 1.3rem);
+  padding-block: 1rem;
+}
+
+.hero-article-reference hr {
+  display: none;
+}
+
+.hero-more {
+  display: flex;
+  gap: 2rem;
+  padding: 0 1rem 1rem;
+}
+
+.hero-thumb-01 {
+  flex: 1;
+}
+
+.hero-more-row {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-thumb-01 {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-thumb-01 img {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: top;
+  height: 100%;
+}
 
 @media only screen and (min-width: 80rem) {
   :root {
@@ -382,6 +440,7 @@ body {
   }
 
   .hero-front {
+    min-height: 100dvh;
     flex: 0;
     flex-basis: 60%;
     padding: 0 calc(var(--frame-spacing) / 2) calc(var(--frame-spacing) * 2)
@@ -406,7 +465,6 @@ body {
   }
 
   .hero-more {
-    display: flex;
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
@@ -414,13 +472,13 @@ body {
     padding: calc(var(--frame-spacing) * 2) var(--frame-spacing)
       var(--frame-spacing) calc(var(--frame-spacing) / 1.5);
     box-sizing: border-box;
-    max-height: 80dvh;
+    max-height: 90dvh;
+    gap: 2rem;
   }
 
-  .hero-more-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  .hero-more-row {
+    flex-direction: row;
+    align-items: flex-end;
   }
 
   .hero-thumb-01 {
@@ -432,17 +490,16 @@ body {
   }
 
   .hero-thumb-01 img {
+    position: static;
     width: 60%;
     height: auto;
-    max-height: 45vh;
+    max-height: 60vh;
     margin-left: auto;
     object-fit: contain;
   }
 
-  .hero-more-row {
-    display: flex;
-    gap: 4rem;
-    align-items: flex-end;
+  .hero-more {
+    flex-direction: column;
   }
 
   .hero-thumb-02 {
@@ -459,19 +516,21 @@ body {
   }
 
   .hero-article-reference {
+    pointer-events: none;
     position: absolute;
     inset: 0 var(--frame-spacing) 0 auto;
     max-height: 100dvh;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    display: flex;
     justify-content: center;
     gap: 4rem;
     font-size: 0.9rem;
+    padding-block: 0;
   }
 
   .hero-article-reference hr {
-    height: 7vw;
+    display: block;
+    height: 10vh;
     width: 2px;
     margin-inline: 0;
   }
@@ -484,12 +543,13 @@ body {
     position: absolute;
     inset: auto auto var(--frame-spacing) var(--frame-spacing);
   }
-}
 
-/*
-@media only screen and (min-width: 80rem) {
-  html {
-    background: red;
+  .site-footer ul {
+    padding-block: 0;
+  }
+
+  .site-footer a {
+    color: var(--text-light);
+    font-size: 1rem;
   }
 }
-*/
