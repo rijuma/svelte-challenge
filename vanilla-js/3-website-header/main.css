@@ -3,15 +3,15 @@
 @import url("./fonts/karlotte.css");
 
 :root {
-  --text-color: #fff;
-  --text-color-inverted: #000;
+  --text-light: #fff;
+  --text-dark: #000;
+  --page-bg-color: #f7efe4;
   --accent-color: #000;
-  --link-color: #fff;
   --root-font-size: 87.5%; /* 14px */
   --outline-padding: 0.25em;
 
-  --heading-spacing: 4rem;
-  --frame-spacing: min(10vw, 5.4rem);
+  --heading-spacing: 3.5rem;
+  --frame-spacing: min(8vw, 5.4rem);
 }
 
 @view-transition {
@@ -21,12 +21,14 @@
 html {
   font-size: var(--root-font-size);
   -webkit-font-smoothing: antialiased;
+  background: var(--page-bg-color);
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 /* Base styles */
@@ -34,6 +36,7 @@ body {
   all: unset;
   cursor: pointer;
   padding: var(--outline-padding);
+  white-space: nowrap;
 }
 
 :where(button:focus-visible) {
@@ -65,6 +68,13 @@ body {
   max-width: 100%;
   width: 100%;
   height: auto;
+}
+
+:where(hr) {
+  border: 0;
+  height: 3px;
+  background: currentColor;
+  border-radius: 99rem;
 }
 
 /* Utility class to hide content from normal flow but show for screen readers. */
@@ -109,7 +119,7 @@ body {
 }
 
 .lang a {
-  color: var(--text-color);
+  color: var(--text-light);
   font-weight: 600;
   font-size: 0.95rem;
   display: block;
@@ -120,11 +130,22 @@ body {
   opacity: 1;
 }
 
+.shop-now {
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  border: 2px solid var(--accent-color);
+  padding: 1.5em;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
 .nav-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--text-color);
+  color: var(--text-light);
   gap: 2rem;
   align-items: center;
   position: relative;
@@ -171,7 +192,7 @@ body {
   justify-content: flex-end;
   padding: 0 var(--frame-spacing) calc(var(--frame-spacing) * 2);
   box-sizing: border-box;
-  color: var(--text-color);
+  color: var(--text-light);
   background: linear-gradient(#0000 50%, #0008);
 }
 
@@ -191,6 +212,7 @@ body {
 }
 
 .hero-gallery-header {
+  padding-top: calc(var(--heading-spacing) * 3);
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
@@ -220,7 +242,7 @@ body {
 
 .hero-gallery-controls hr {
   --hover-length: 0.25s;
-  --color-hover: var(--text-color);
+  --color-hover: var(--text-light);
   --color-idle: color-mix(in srgb, var(--color-hover), transparent 50%);
   position: relative;
   border: 0;
@@ -293,7 +315,7 @@ body {
 }
 
 .hero-gallery-nav button {
-  --button-color: color-mix(in srgb, var(--link-color), transparent 50%);
+  --button-color: color-mix(in srgb, var(--text-light), transparent 50%);
   display: grid;
   place-items: center;
   width: 1rem;
@@ -306,7 +328,7 @@ body {
 .hero-gallery-nav button:focus-visible,
 .hero-gallery-nav button:hover,
 .hero-gallery-nav .active button {
-  --button-color: var(--link-color);
+  --button-color: var(--text-light);
 }
 
 .hero-gallery-nav .active button {
@@ -321,18 +343,13 @@ body {
   border-radius: 99rem;
 }
 
-.site-footer {
-  position: absolute;
-  inset: auto auto var(--frame-spacing) var(--frame-spacing);
-}
-
 .site-footer ul {
   display: flex;
   gap: 2.5rem;
 }
 
 .site-footer a {
-  color: var(--text-color);
+  color: var(--text-light);
   text-decoration: none;
   opacity: 0.8;
 }
@@ -354,13 +371,14 @@ body {
 
 /* ### /FOOTER ### */
 
-@media only screen and (min-width: 60rem) {
+@media only screen and (min-width: 80rem) {
   :root {
     --root-font-size: 100%; /* 16px */
   }
 
   .hero {
     display: flex;
+    align-items: flex-end;
   }
 
   .hero-front {
@@ -371,7 +389,8 @@ body {
   }
 
   .hero-front .title {
-    font-size: clamp(9rem, 15vw, 13rem);
+    font-size: clamp(8rem, 14vw, 13rem);
+    max-width: 0;
   }
 
   .hero-gallery-nav {
@@ -386,17 +405,91 @@ body {
     display: none;
   }
 
+  .hero-more {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    flex-basis: 40%;
+    padding: calc(var(--frame-spacing) * 2) var(--frame-spacing)
+      var(--frame-spacing) calc(var(--frame-spacing) / 1.5);
+    box-sizing: border-box;
+    max-height: 80dvh;
+  }
+
+  .hero-more-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero-thumb-01 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5rem;
+    box-sizing: border-box;
+  }
+
+  .hero-thumb-01 img {
+    width: 60%;
+    height: auto;
+    max-height: 45vh;
+    margin-left: auto;
+    object-fit: contain;
+  }
+
+  .hero-more-row {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-end;
+  }
+
+  .hero-thumb-02 {
+    flex: 1;
+  }
+
+  .hero-cta {
+    flex: 1;
+  }
+
   .hero-gallery-header {
     flex-direction: row;
     margin-bottom: 6rem;
   }
 
-  .hero-more {
-    flex: 0;
-    display: none;
+  .hero-article-reference {
+    position: absolute;
+    inset: 0 var(--frame-spacing) 0 auto;
+    max-height: 100dvh;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-article-reference hr {
+    height: 7vw;
+    width: 2px;
+    margin-inline: 0;
   }
 
   .lang a {
     color: var(--inverted-link-color);
   }
+
+  .site-footer {
+    position: absolute;
+    inset: auto auto var(--frame-spacing) var(--frame-spacing);
+  }
 }
+
+/*
+@media only screen and (min-width: 80rem) {
+  html {
+    background: red;
+  }
+}
+*/
