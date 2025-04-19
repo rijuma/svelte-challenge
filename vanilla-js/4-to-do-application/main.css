@@ -2,7 +2,7 @@
   layer(normalize);
 
 :root {
-  --text-color: #333;
+  --text-color: #606473;
   --accent-color: #05cf6e;
   --root-font-size: 87.5%; /* 14px */
 
@@ -73,13 +73,15 @@ body {
     sans-serif;
   display: grid;
   place-items: center;
+  padding: 1rem 1rem 2.5rem;
+  box-sizing: border-box;
 }
 
 .app {
+  view-transition-name: app;
   background: var(--panel-bg-color);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   min-width: 18.8rem;
-  min-height: 31.2rem;
 }
 
 .app header {
@@ -103,8 +105,10 @@ body {
 }
 
 .app .body {
+  min-height: 17.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 2rem;
   padding: 2rem 1rem;
 }
@@ -112,7 +116,7 @@ body {
 .app .list {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.9rem;
   font-size: 1rem;
 }
 
@@ -121,10 +125,15 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 }
 
 .list .status {
-  font-size: 1.5em;
+  font-size: 1.4em;
+}
+
+.list li .status {
+  color: var(--item-pending-color);
 }
 
 .list li.done .label {
@@ -136,8 +145,16 @@ body {
   color: var(--item-done-color);
 }
 
-.list li.pending .status {
-  color: var(--item-pending-color);
+.list li.empty {
+  justify-content: center;
+  font-style: italic;
+  padding-block: 5rem;
+  color: var(--item-dimmed-color);
+  cursor: default;
+}
+
+.add-todo {
+  view-transition-name: addTodoForm;
 }
 
 .add-todo input {
@@ -154,7 +171,7 @@ body {
 
 .add-todo .submit {
   position: absolute;
-  inset-block-start: 1.5rem;
+  inset-block-start: 0.8rem;
   inset-inline-start: 50%;
   transform: translateX(-50%);
   background: var(--form-action-bg-color);

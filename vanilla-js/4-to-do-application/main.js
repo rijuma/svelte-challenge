@@ -1,3 +1,209 @@
+function randId() {
+  return +`${Math.random()}`.split('.')[1]
+}
+
+const LS_KEY = 'todo-app'
+
+class TodoApp {
+  #controller = null
+  #ref = null
+  #list = null
+
+  #loadData = () => {
+    // Loads the data fron the local storage or initializes it with the default values.
+
+    const json = localStorage.getItem(LS_KEY)
+
+    if (json) {
+      const parse = ({ id, label }) => ({ id: +id || randId(), label })
+
+      try {
+        const { done, pending } = JSON.parse(json)
+
+        this.#list = {
+          done: parse(done),
+          pending: parse(pending),
+        }
+      } catch (e) {
+        // Oh well..
+        console.warn('Unable to load app saved state. Discarding...')
+      }
+    }
+
+    // If there's no saved state, then we set the example data.
+    if (!this.#list) this.#list = {
+      done: [
+        {
+          id: randId(),
+          label: 'Buy now sweatshirt',
+        },
+        {
+          id: randId(),
+          label: 'Read an article',
+        }
+      ],
+      pending: [
+        {
+          id: randId(),
+          label: 'Write blog post',
+        },
+        {
+          id: randId(),
+          label: 'Watch "Mr Robot"',
+        },
+        {
+          id: randId(),
+          label: 'Run',
+        }
+      ]
+    }
+  }
+
+  #saveData = () => {
+    const json = JSON.stringify(this.#list)
+    localStorage.setItem(LS_KEY, json)
+  }
+
+  #renderHeader = () => {
+    const date = new Date()
+
+    const monthNode = this.#ref.querySelector('header .month')
+    monthNode.innerHTML = date.toLocaleString('default', { month: 'long' })
+
+    const dateNode = this.#ref.querySelector('header .date')
+    dateNode.innerHTML = date.toLocaleString('default', { weekday: 'long', month: 'long', day: 'numeric' })
+  }
+
+  get #form() {
+    return this.#ref.querySelector('.app form.add-todo')
+  }
+
+  get #formInput() {
+    return this.#ref.querySelector('.app form.add-todo input')
+  }
+
+  get #listElem() {
+    return this.#ref.querySelector('.app .list')
+  }
+
+  #bindEvents = async () => {
+
+    // Bind form submit.
+    this.#form.addEventListener('submit', async e => {
+      e.preventDefault()
+
+      const form = e.target
+      const data = new FormData(form)
+      const task = data.get('task')
+
+      if (!task) return
+
+      this.#list.pending.push({
+        id: randId(),
+        label: task
+      })
+
+      form.reset()
+
+      this.#formInput.focus()
+
+      await this.#render()
+    }, { signal: this.#controller.signal })
+
+    // Bind li element behavior.
+    this.#listElem.addEventListener('click', e => {
+      let li = e.target.closest('li')
+
+      if (!li) return
+
+      const id = +li.dataset.id
+
+      console.log({ id })
+
+      if (li.classList.contains('done')) {
+        // If it's done, we remove it.
+        this.#list.done = this.#list.done.filter(i => i.id !== id)
+        return this.#render()
+      }
+
+      // Otherwise we move it to the done list.
+      const item = this.#list.pending.find(i => i.id === id)
+
+      if (!item) {
+        console.warn(`Couldn't find item with id="${id}".`)
+        return
+      }
+
+      this.#list.pending = this.#list.pending.filter(i => i.id !== item.id)
+      this.#list.done.push(item)
+
+      return this.#render()
+    }, { signal: this.#controller.signal })
+  }
+
+  #renderEmpty = () => {
+    this.#listElem.innerHTML = '<li class="empty">(To do task list is empty)</li>'
+  }
+
+  #render = async () => transition(() => {
+    this.#listElem.innerHTML = ''
+
+    const { done, pending } = this.#list
+
+    if (!done.length && !pending.length) return this.#renderEmpty()
+
+    const drawItem = (({ id, label }, done) => {
+      const li = document.createElement('li')
+      li.dataset.id = id
+      li.style.viewTransitionName = `todo${id}`
+      if (done) li.classList.add('done')
+      const icon = done ? '<i class="fa-regular fa-face-smile"></i>' : '<i class="fa-regular fa-face-meh"></i>'
+      const ariaLabel = done ? 'Status: Pending' : 'Status: Done'
+      li.innerHTML = `
+          <div class="label">${label}</div>
+          <div class="status" aria-label="${ariaLabel}">
+            ${icon}
+          </div>
+        `
+      this.#listElem.appendChild(li)
+    })
+
+    done.forEach(item => { drawItem(item, true) })
+    pending.forEach(item => { drawItem(item, false) })
+  })
+
+  cleanup = () => {
+    // Unbinds all remaining event listeners.
+    this.#controller.abort()
+  }
+
+  #init = () => {
+    // Binds event listeners.
+    this.#bindEvents()
+
+    // Write the date on the header.
+    this.#renderHeader()
+
+    // Load / Initialize ToDo data.
+    this.#loadData()
+
+    // Call the draw function to update the to do list.
+    this.#render()
+  }
+
+  constructor(ref) {
+    if (!ref) throw ('Could not initialize app.')
+
+    this.#ref = ref
+    this.#controller = new AbortController()
+
+    this.#init()
+  }
+
+}
+
+// --
+
 // This calls the browser's transition API before and after the DOM update within the update function parameter.
 async function transition(update) {
   if (document?.startViewTransition) {
@@ -8,66 +214,16 @@ async function transition(update) {
   }
 }
 
-async function handleMenuClick(event) {
-  const wrapperLi = event.target?.parentNode
-
-  // Skip action if the active element is the active one.
-  if (!wrapperLi || wrapperLi.classList.contains('active')) return
-
-  await transition(() => {
-    // Remove the active
-    const activeLi = document.querySelector('.main-nav li.active')
-    activeLi?.classList.remove('active')
-
-    wrapperLi.classList.add('active')
-  })
-}
-
-
-function getMonth() {
-  const date = new Date()
-  const month = date.toLocaleString('default', { month: 'long' })
-
-  return 'December'
-
-  return month
-}
-
-function getFullDate() {
-  const date = new Date()
-  const fulldate = date.toLocaleString('default', { weekday: 'long', month: 'long', day: 'numeric' })
-
-  return 'Tuesday, December 22'
-
-  return fulldate
-}
-
-// --
-
-const controller = new AbortController()
-const signal = controller.signal
+let appInstance
 
 function init() {
-  const links = document.querySelectorAll('.main-nav li a')
+  const app = document.querySelector('.app')
 
-  // Set date in header
-  const monthLabel = document.querySelector('#month-label')
-  monthLabel.innerHTML = getMonth()
-
-  const dateLabel = document.querySelector('#date-label')
-  dateLabel.innerHTML = getFullDate()
-
-
-  links.forEach(link => {
-    link.addEventListener('click', handleMenuClick, { signal })
-  })
-
-  // Let's add a class if viewTransitions is not supported by the browser.
-  if (!document?.startViewTransition) document.documentElement.classList.add('no-vt')
+  appInstance = new TodoApp(app)
 }
 
 function cleanup() {
-  controller.abort() // Event binding cleanup.
+  appInstance.cleanup() // Cleanup app
 }
 
 window.addEventListener('load', init)
