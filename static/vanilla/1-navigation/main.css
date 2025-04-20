@@ -24,12 +24,13 @@ body {
   padding: 0;
 }
 
-body {
+body,
+main {
   min-height: 100dvh;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-body {
+main {
   display: grid;
   place-items: center;
   background: radial-gradient(
@@ -113,7 +114,6 @@ body {
   }
 
   .main-nav a {
-    text-align: center;
     padding: 0 0 2.875rem;
   }
 

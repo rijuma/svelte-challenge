@@ -158,6 +158,17 @@
   </tbody>
 </table>
 
+<blockquote>
+  <b>Developer note:</b> The Vanilla version is much closer to the provided image reference due to
+  the tailwind token system. It is possible to set custom values to the theme but these are usually
+  agreed between the design team and the dev teams. For these examples I've used
+  <a
+    href="https://tailwindcss.com/docs/theme#default-theme-variable-reference"
+    target="_blank"
+    rel="noopener">Tailwind's default design tokens</a
+  > on the Tailwind version.
+</blockquote>
+
 <h2>Delivery instructions</h2>
 
 <h3>Live version</h3>
