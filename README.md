@@ -1,6 +1,6 @@
 # Revance Frontend Test
 
-Contractor firm: Svitla
+Contractor firm: [Svitla](https://svitla.com)
 
 ## Developer info
 
@@ -50,11 +50,46 @@ Specific instructions:
 
 ## Delivery instructions
 
-A private repository for the solution will be available at https://github.com/rijuma/revance-svitla-frontend-test (please share a github account to give access to it) and a live coding version for the solution at https://revance-test.rigoli.dev which will be password protected:
+### Live version
+
+A live version for the solution is temporarily available at [https://revance-test.rigoli.dev](https://revance-test.rigoli.dev) password protected:
 
 ```text
-    user: svitla
-password: frontend
+user: svitla-revance
+password: frontend-test
 ```
 
-This will be available on a private repository at It will be live on the domain until **feedback is returned** or until **April 30th** if no feedback was returned. The intention is to have an easy preview for the challenge. If there's any problem with this you can ask me to take it down at any moment at [marcos@rigoli.dev](mailto:marcos@rigoli.dev).
+This live version will be available until **feedback is returned** or until **May 10th**. The intention is to have an easy preview for the challenge.
+
+If there's any problem with this you can ask me to take it down at [marcos@rigoli.dev](mailto:marcos@rigoli.dev).
+
+### Deliverable
+
+This repository would probably be delivered by a compressed file.
+
+A private repository for the solution will also be available at [https://github.com/rijuma/revance-svitla-frontend-test](https://github.com/rijuma/revance-svitla-frontend-test) <i>(please share a github account to give access to it)</i>.
+
+#### Run locally
+
+To run this code locally please follow these steps:
+
+1. If you don't have the files already, clone this repository locally, for example by using the [github CLI](https://cli.github.com):
+   ```text
+   git clone git@github.com:rijuma/revance-svitla-frontend-test.git
+   ```
+   Then, get into the folder by:
+   ```text
+   cd revance-svitla-frontend-test
+   ```
+2. Using a terminal on the extracted/cloned folder, install the dependencies by running:
+   ```text
+   npm install
+   ```
+   > **Note:** Check **npm** documentation [here](https://www.npmjs.com) if needed.
+3. Start the server by running `npm run dev` and open the browser at [http://localhost:5173](http://localhost:5173).
+4. You should be able to see a home page with the details on the frontend test and a list of links to open each solution.
+   > **Note:** To stop the server, just hit `Ctrl + C` in the terminal. Make sure to stop the server before closing the terminal window, otherwise the server process will remain open in the background.
+
+I've enjoyed working on the challenges. Looking forward to working with you soon.
+
+- Juan Marcos Rigoli

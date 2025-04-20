@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Karlotte';
+  src:
+    url('./karlotte.woff') format('woff'),
+    url('./karlotte.woff2') format('woff2');
+}

@@ -1,6 +1,5 @@
-@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-  layer(normalize);
-@import url("./fonts/karlotte.css");
+@import 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' layer(normalize);
+@import url('./fonts/karlotte.css');
 
 :root {
   --text-light: #fff;
@@ -95,8 +94,7 @@ body {
 
 body {
   min-height: 100dvh;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .title {
@@ -280,7 +278,7 @@ body {
 .hero-gallery-controls hr::before,
 .hero-gallery-controls hr::after {
   --arrow-offset: calc(var(--gallery-arrow-width) * -1);
-  content: "";
+  content: '';
   position: absolute;
   inset-block-start: 50%;
   border-width: var(--gallery-arrow-width);
@@ -350,7 +348,7 @@ body {
 }
 
 .hero-gallery-nav button::before {
-  content: "";
+  content: '';
   width: 0.5rem;
   height: 0.5rem;
   background: var(--button-color);
@@ -443,8 +441,7 @@ body {
     min-height: 100dvh;
     flex: 0;
     flex-basis: 60%;
-    padding: 0 calc(var(--frame-spacing) / 2) calc(var(--frame-spacing) * 2)
-      var(--frame-spacing);
+    padding: 0 calc(var(--frame-spacing) / 2) calc(var(--frame-spacing) * 2) var(--frame-spacing);
   }
 
   .hero-front .title {
@@ -469,8 +466,8 @@ body {
     justify-content: flex-end;
     position: relative;
     flex-basis: 40%;
-    padding: calc(var(--frame-spacing) * 2) var(--frame-spacing)
-      var(--frame-spacing) calc(var(--frame-spacing) / 1.5);
+    padding: calc(var(--frame-spacing) * 2) var(--frame-spacing) var(--frame-spacing)
+      calc(var(--frame-spacing) / 1.5);
     box-sizing: border-box;
     max-height: 90dvh;
     gap: 2rem;

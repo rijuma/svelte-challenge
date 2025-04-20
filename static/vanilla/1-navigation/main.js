@@ -31,7 +31,7 @@ const signal = controller.signal
 function init() {
   const links = document.querySelectorAll('.main-nav li a')
 
-  links.forEach(link => {
+  links.forEach((link) => {
     link.addEventListener('click', handleMenuClick, { signal })
   })
 

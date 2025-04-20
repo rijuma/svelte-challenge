@@ -23,8 +23,8 @@ class TodoApp {
         console.log({ done, pending })
 
         this.#list = {
-          done: done.map(item => parse(item)),
-          pending: pending.map(item => parse(item)),
+          done: done.map((item) => parse(item)),
+          pending: pending.map((item) => parse(item)),
         }
       } catch (e) {
         // Oh well..
@@ -33,32 +33,33 @@ class TodoApp {
     }
 
     // If there's no saved state, then we set the example data.
-    if (!this.#list) this.#list = {
-      done: [
-        {
-          id: randId(),
-          label: 'Buy now sweatshirt',
-        },
-        {
-          id: randId(),
-          label: 'Read an article',
-        }
-      ],
-      pending: [
-        {
-          id: randId(),
-          label: 'Write blog post',
-        },
-        {
-          id: randId(),
-          label: 'Watch "Mr Robot"',
-        },
-        {
-          id: randId(),
-          label: 'Run',
-        }
-      ]
-    }
+    if (!this.#list)
+      this.#list = {
+        done: [
+          {
+            id: randId(),
+            label: 'Buy now sweatshirt',
+          },
+          {
+            id: randId(),
+            label: 'Read an article',
+          },
+        ],
+        pending: [
+          {
+            id: randId(),
+            label: 'Write blog post',
+          },
+          {
+            id: randId(),
+            label: 'Watch "Mr Robot"',
+          },
+          {
+            id: randId(),
+            label: 'Run',
+          },
+        ],
+      }
   }
 
   #saveData = () => {
@@ -74,7 +75,11 @@ class TodoApp {
     monthNode.innerHTML = date.toLocaleString('default', { month: 'long' })
 
     const dateNode = this.#ref.querySelector('header .date')
-    dateNode.innerHTML = date.toLocaleString('default', { weekday: 'long', month: 'long', day: 'numeric' })
+    dateNode.innerHTML = date.toLocaleString('default', {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+    })
   }
 
   get #form() {
@@ -91,54 +96,62 @@ class TodoApp {
 
   #bindEvents = async () => {
     // Bind form submit.
-    this.#form.addEventListener('submit', async e => {
-      e.preventDefault()
+    this.#form.addEventListener(
+      'submit',
+      async (e) => {
+        e.preventDefault()
 
-      const form = e.target
-      const data = new FormData(form)
-      const task = data.get('task')
+        const form = e.target
+        const data = new FormData(form)
+        const task = data.get('task')
 
-      if (!task) return
+        if (!task) return
 
-      this.#list.pending.push({
-        id: randId(),
-        label: task
-      })
+        this.#list.pending.push({
+          id: randId(),
+          label: task,
+        })
 
-      form.reset()
+        form.reset()
 
-      this.#formInput.focus()
+        this.#formInput.focus()
 
-      await this.#render()
-    }, { signal: this.#controller.signal })
+        await this.#render()
+      },
+      { signal: this.#controller.signal },
+    )
 
     // Bind li element behavior.
-    this.#listElem.addEventListener('click', e => {
-      let li = e.target.closest('li')
+    this.#listElem.addEventListener(
+      'click',
+      (e) => {
+        let li = e.target.closest('li')
 
-      if (!li) return
+        if (!li) return
 
-      const id = +li.dataset.id
+        const id = +li.dataset.id
 
-      if (li.classList.contains('done')) {
-        // If it's done, we remove it.
-        this.#list.done = this.#list.done.filter(i => i.id !== id)
+        if (li.classList.contains('done')) {
+          // If it's done, we remove it.
+          this.#list.done = this.#list.done.filter((i) => i.id !== id)
+          return this.#render()
+        }
+
+        // Otherwise we move it to the done list.
+        const item = this.#list.pending.find((i) => i.id === id)
+
+        if (!item) {
+          console.warn(`Couldn't find item with id="${id}".`)
+          return
+        }
+
+        this.#list.pending = this.#list.pending.filter((i) => i.id !== item.id)
+        this.#list.done.push(item)
+
         return this.#render()
-      }
-
-      // Otherwise we move it to the done list.
-      const item = this.#list.pending.find(i => i.id === id)
-
-      if (!item) {
-        console.warn(`Couldn't find item with id="${id}".`)
-        return
-      }
-
-      this.#list.pending = this.#list.pending.filter(i => i.id !== item.id)
-      this.#list.done.push(item)
-
-      return this.#render()
-    }, { signal: this.#controller.signal })
+      },
+      { signal: this.#controller.signal },
+    )
   }
 
   #renderEmpty = () => {
@@ -154,12 +167,14 @@ class TodoApp {
 
     if (!done.length && !pending.length) return this.#renderEmpty()
 
-    const drawItem = (({ id, label }, done) => {
+    const drawItem = ({ id, label }, done) => {
       const li = document.createElement('li')
       li.dataset.id = id
       li.style.viewTransitionName = `todo${id}`
       if (done) li.classList.add('done')
-      const icon = done ? '<i class="fa-regular fa-face-smile"></i>' : '<i class="fa-regular fa-face-meh"></i>'
+      const icon = done
+        ? '<i class="fa-regular fa-face-smile"></i>'
+        : '<i class="fa-regular fa-face-meh"></i>'
       const ariaLabel = done ? 'Status: Pending' : 'Status: Done'
       li.innerHTML = `
           <div class="label">${label}</div>
@@ -168,10 +183,14 @@ class TodoApp {
           </div>
         `
       this.#listElem.appendChild(li)
-    })
+    }
 
-    done.forEach(item => { drawItem(item, true) })
-    pending.forEach(item => { drawItem(item, false) })
+    done.forEach((item) => {
+      drawItem(item, true)
+    })
+    pending.forEach((item) => {
+      drawItem(item, false)
+    })
   }
 
   #render = async (animate = true) => {
@@ -195,7 +214,7 @@ class TodoApp {
   }
 
   constructor(ref) {
-    if (!ref) throw ('Could not initialize app.')
+    if (!ref) throw 'Could not initialize app.'
 
     this.#ref = ref
     this.#controller = new AbortController()
