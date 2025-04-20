@@ -20,9 +20,11 @@ class TodoApp {
       try {
         const { done, pending } = JSON.parse(json)
 
+        console.log({ done, pending })
+
         this.#list = {
-          done: parse(done),
-          pending: parse(pending),
+          done: done.map(item => parse(item)),
+          pending: pending.map(item => parse(item)),
         }
       } catch (e) {
         // Oh well..
@@ -61,6 +63,7 @@ class TodoApp {
 
   #saveData = () => {
     const json = JSON.stringify(this.#list)
+    console.log({ json })
     localStorage.setItem(LS_KEY, json)
   }
 
@@ -87,7 +90,6 @@ class TodoApp {
   }
 
   #bindEvents = async () => {
-
     // Bind form submit.
     this.#form.addEventListener('submit', async e => {
       e.preventDefault()
@@ -118,8 +120,6 @@ class TodoApp {
 
       const id = +li.dataset.id
 
-      console.log({ id })
-
       if (li.classList.contains('done')) {
         // If it's done, we remove it.
         this.#list.done = this.#list.done.filter(i => i.id !== id)
@@ -145,8 +145,10 @@ class TodoApp {
     this.#listElem.innerHTML = '<li class="empty">(To do task list is empty)</li>'
   }
 
-  #render = async () => transition(() => {
+  #updateDOM = () => {
     this.#listElem.innerHTML = ''
+
+    this.#saveData() // This probably shouldn't be here, but it's just a prototype..
 
     const { done, pending } = this.#list
 
@@ -170,11 +172,12 @@ class TodoApp {
 
     done.forEach(item => { drawItem(item, true) })
     pending.forEach(item => { drawItem(item, false) })
-  })
+  }
 
-  cleanup = () => {
-    // Unbinds all remaining event listeners.
-    this.#controller.abort()
+  #render = async (animate = true) => {
+    if (animate) return transition(() => this.#updateDOM())
+
+    return this.#updateDOM()
   }
 
   #init = () => {
@@ -188,7 +191,7 @@ class TodoApp {
     this.#loadData()
 
     // Call the draw function to update the to do list.
-    this.#render()
+    this.#render(false)
   }
 
   constructor(ref) {
@@ -200,6 +203,10 @@ class TodoApp {
     this.#init()
   }
 
+  cleanup = () => {
+    // Unbinds all remaining event listeners.
+    this.#controller.abort()
+  }
 }
 
 // --
