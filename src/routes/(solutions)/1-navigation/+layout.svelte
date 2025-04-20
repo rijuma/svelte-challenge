@@ -2,6 +2,10 @@
   let { children } = $props()
 </script>
 
+<svelte:head>
+  <title>Website tests - 1. Navigation hover (Svelte)</title>
+</svelte:head>
+
 <main
   class="grid place-items-center min-h-[100dvh] [background:radial-gradient(_circle_at_center_300%,var(--background-gradient-b),var(--background-gradient-b)_65%,var(--background-gradient-a)_80%,var(--background-gradient-a)_85%_)] m-0 p-0"
 >

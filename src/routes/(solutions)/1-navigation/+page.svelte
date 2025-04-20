@@ -26,10 +26,6 @@
   let current = $state<Link>('branding')
 </script>
 
-<svelte:head>
-  <title>Website tests - 1. Navigation hover (Svelte)</title>
-</svelte:head>
-
 <nav class="main-nav">
   <ul class="text-4xl lg:text-5xl flex flex-col lg:flex-row gap-5 lg:gap-24">
     {#each Object.entries(links) as [link, { label, url }]}
