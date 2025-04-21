@@ -93,14 +93,14 @@
   <thead>
     <tr>
       <th>Task</th>
-      <th>Vanilla JS + HTML + CSS</th>
+      <th>Vanilla</th>
       <th>Svelte + TailwindCSS</th>
       <th>Image Reference</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>1. Navigation hover</th>
+      <th>1. Navigation</th>
       <td><a href="/vanilla/1-navigation/index.html" target="_blank">Open</a></td>
       <td><a href="/1-navigation" target="_blank">Open</a></td>
       <td
@@ -110,7 +110,7 @@
       >
     </tr>
     <tr>
-      <th>2. Gradient background</th>
+      <th>2. Gradient</th>
       <td><a href="/vanilla/2-gradient/index.html" target="_blank">Open</a></td>
       <td><a href="/2-gradient" target="_blank">Open</a></td>
       <td
@@ -120,7 +120,7 @@
       >
     </tr>
     <tr>
-      <th>3. Website Header</th>
+      <th>3. Website</th>
       <td><a href="/vanilla/3-website/index.html" target="_blank">Open</a></td>
       <td><a href="/3-website" target="_blank">Open</a></td>
       <td
@@ -130,7 +130,7 @@
       >
     </tr>
     <tr>
-      <th>4. To do application</th>
+      <th>4. To do</th>
       <td><a href="/vanilla/4-to-do/index.html" target="_blank">Open</a></td>
       <td><a href="/4-to-do" target="_blank">Open</a></td>
       <td

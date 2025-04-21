@@ -1,7 +1,6 @@
 <script lang="ts">
   import 'view-transitions-polyfill'
-  import { persistedState, randId, transition } from '$lib/utils'
-  import { getLongDate, getMonthName } from '$lib/utils/date'
+  import { persistedState, randId, transition, getLongDate, getMonthName } from '$lib/utils'
 
   type Props = {
     key: string

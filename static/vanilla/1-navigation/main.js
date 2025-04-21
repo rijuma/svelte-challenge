@@ -9,6 +9,7 @@ async function transition(update) {
 }
 
 async function handleMenuClick(event) {
+  event.preventDefault()
   const wrapperLi = event.target?.parentNode
 
   // Skip action if the active element is the active one.

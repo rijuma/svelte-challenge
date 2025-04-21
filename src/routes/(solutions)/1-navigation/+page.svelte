@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { transition } from '$lib/utils'
+  import { prevent, transition } from '$lib/utils'
 
   type LinkData = {
     label: string
@@ -36,7 +36,8 @@
           ${active ? 'opacity-100 after:absolute after:left-0 after:top-1/2 after:h-3/4 after:w-2 after:-translate-y-1/2 lg:after:top-auto lg:after:bottom-0 lg:after:left-1/2 lg:after:-translate-x-1/2 after:bg-white after:rounded-full lg:after:h-2 lg:after:w-1/2 after:[view-transition-name:main-nav-dash]' : ''}
         `}
       >
-        <a href={url} onclick={() => transition(() => (current = link as Link))}>{label}</a>
+        <a href={url} onclick={prevent(() => transition(() => (current = link as Link)))}>{label}</a
+        >
       </li>
     {/each}
   </ul>
