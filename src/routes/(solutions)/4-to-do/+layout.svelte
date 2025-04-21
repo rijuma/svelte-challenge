@@ -15,7 +15,7 @@
   />
 </svelte:head>
 
-<main class="min-h-[100dvh] grid place-items-center">
+<main class="min-h-[100dvh] grid place-items-center p-4 bg-stone-100">
   {@render children()}
 </main>
 

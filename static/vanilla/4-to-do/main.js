@@ -175,12 +175,15 @@ class TodoApp {
       const icon = done
         ? '<i class="fa-regular fa-face-smile"></i>'
         : '<i class="fa-regular fa-face-meh"></i>'
-      const ariaLabel = done ? 'Status: Pending' : 'Status: Done'
+
+      const ariaLabel = done ? `${label}. Completed. Action will remove the item.` : `${label}. Pending. Action will mark the item as Done.`
       li.innerHTML = `
-          <div class="label">${label}</div>
-          <div class="status" aria-label="${ariaLabel}">
-            ${icon}
-          </div>
+          <button type="button" aria-label="${ariaLabel}">
+            <span class="label">${label}</span>
+            <span class="status">
+              ${icon}
+            </span>
+          </button>
         `
       this.#listElem.appendChild(li)
     }

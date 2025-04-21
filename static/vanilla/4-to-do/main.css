@@ -122,21 +122,22 @@ body {
   font-size: 1rem;
 }
 
-.list li {
+.list li button {
+  padding: 0.4rem var(--panel-padding-inline);
+  margin-inline: calc(var(--panel-padding-inline) * -1);
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4rem var(--panel-padding-inline);
-  margin-inline: calc(var(--panel-padding-inline) * -1);
-  cursor: pointer;
   transition: background 0.25s ease;
+  cursor: pointer;
 }
 
-.list li:not(.empty):hover {
+.list li button:hover {
   background: var(--item-pending-hover-color);
 }
 
-.list li.done:not(.empty):hover {
+.list li.done button:hover {
   background: var(--item-done-hover-color);
 }
 

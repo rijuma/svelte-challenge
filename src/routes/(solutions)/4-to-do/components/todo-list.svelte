@@ -88,43 +88,57 @@
   }
 </script>
 
-<div class={`[view-transition-name:todo-app-${key}]`}>
-  <header>
-    <h1 class="month">{monthName}</h1>
-    <h4 class="date">{fullDate}</h4>
+<div class={`min-w-80 max-sm:w-full shadow-md bg-white [view-transition-name:todo-app-${key}]`}>
+  <header class="flex flex-col gap-4 p-8 border-b-4 border-slate-100 text-center">
+    <h1 class="text-4xl font-bold text-zinc-600 m-0">
+      {monthName}
+    </h1>
+    <h4 class="text-sm text-indigo-300 font-bold m-0">{fullDate}</h4>
   </header>
-  <div class="body">
-    <ul class="list" aria-live="polite">
+  <div class="flex flex-col min-h-72 justify-between gap-8 px-4 pt-4 pb-8">
+    <ul class="flex flex-col text-sm" aria-live="polite">
       {#each data.value.done as { id, label }}
-        <li style={`view-transition-name: todo-${id}`}>
+        <li style={`view-transition-name: todo-${id}`} class="-mx-4">
           <button
             type="button"
             onclick={() => handleDoneClick(id)}
             aria-label={`${label}. Completed. Action will remove the item.`}
+            class="flex justify-between w-full items-center py-1 px-4 cursor-pointer transition-colors"
           >
-            <span>{label}</span>
-            <span><i class="fa-regular fa-face-smile"></i></span>
+            <span class="opacity-25 line-through">{label}</span>
+            <span class="text-emerald-400 text-xl"><i class="fa-regular fa-face-smile"></i></span>
           </button>
         </li>
       {/each}
       {#each data.value.pending as { id, label }}
-        <li style={`view-transition-name: todo-${id}`}>
+        <li style={`view-transition-name: todo-${id}`} class="-mx-4">
           <button
             type="button"
             onclick={() => handlePendingClick(id)}
             aria-label={`${label}. Pending. Action will mark the item as Done.`}
+            class="flex justify-between w-full items-center py-1 px-4 cursor-pointer transition-colors"
           >
             <span>{label}</span>
-            <span><i class="fa-regular fa-face-meh"></i></span>
+            <span class="opacity-25 text-xl"><i class="fa-regular fa-face-meh"></i></span>
           </button>
         </li>
       {/each}
     </ul>
-    <form class="add-todo" onsubmit={handleSubmit}>
+    <form class="flex sm:flex-col justify-between items-center gap-2" onsubmit={handleSubmit}>
       <!-- svelte-ignore a11y_autofocus -->
-      <input type="text" bind:value={form.task} placeholder="Add Task" autofocus />
-      <div class="action">
-        <button type="submit" class="submit">Add</button>
+      <input
+        autofocus
+        type="text"
+        bind:value={form.task}
+        placeholder="Add Task"
+        class="border-black/15 w-full placeholder:text-indigo-300"
+      />
+      <div class="sm:relative">
+        <button
+          type="submit"
+          class="bg-emerald-400 rounded-full py-2 px-4.5 font-bold text-white sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:top-3 sm:px-10"
+          >Add</button
+        >
       </div>
     </form>
   </div>
