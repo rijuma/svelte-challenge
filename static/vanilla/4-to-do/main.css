@@ -70,7 +70,7 @@ body {
   padding: 0;
 }
 
-body {
+.page {
   min-height: 100dvh;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   display: grid;

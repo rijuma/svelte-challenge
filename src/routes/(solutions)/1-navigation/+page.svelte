@@ -32,7 +32,6 @@
       {@const active = link === current}
       <li
         class={`
-
           block relative text-white no-underline font-semibold transition-opacity duration-300 pt-0 lg:pb-11 pl-6 lg:pl-0 opacity-50 hover:opacity-80
           ${active ? 'opacity-100 after:absolute after:left-0 after:top-1/2 after:h-3/4 after:w-2 after:-translate-y-1/2 lg:after:top-auto lg:after:bottom-0 lg:after:left-1/2 lg:after:-translate-x-1/2 after:bg-white after:rounded-full lg:after:h-2 lg:after:w-1/2 after:[view-transition-name:main-nav-dash]' : ''}
         `}
