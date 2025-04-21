@@ -143,14 +143,26 @@
 </table>
 
 <blockquote>
-  <b>Developer note:</b> The Vanilla version is much closer to the provided image reference due to
-  the tailwind token system. It is possible to set custom values to the theme but these are usually
-  agreed between the design team and the dev teams. For these examples I've used
-  <a
-    href="https://tailwindcss.com/docs/theme#default-theme-variable-reference"
-    target="_blank"
-    rel="noopener">Tailwind's default design tokens</a
-  > on the Tailwind version.
+  <p>
+    <b>Developer notes:</b> The Vanilla version is much closer to the provided image reference due
+    to the tailwind token system. It is possible to set custom values to the theme but these are
+    usually agreed between the design team and the dev teams. For these examples I've used
+    <a
+      href="https://tailwindcss.com/docs/theme#default-theme-variable-reference"
+      target="_blank"
+      rel="noopener">Tailwind's default design tokens</a
+    > on the Tailwind version.
+  </p>
+  <p>
+    Animations for solution <b>1</b> and solution <b>4</b> rely heavily on the new browsers
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API"
+      target="_blank"
+      rel="noopener">View Transition API</a
+    >. I was hoping that by now Firefox was already implementing the feature but it seems like we
+    will have to wait a bit longer. I've added a polyfill, but for the full experience I'd recommend
+    testing it on Chrome.
+  </p>
 </blockquote>
 
 <h2>Delivery instructions</h2>

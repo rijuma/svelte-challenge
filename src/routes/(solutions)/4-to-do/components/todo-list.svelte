@@ -1,4 +1,5 @@
 <script lang="ts">
+  import 'view-transitions-polyfill'
   import { persistedState, randId, transition } from '$lib/utils'
   import { getLongDate, getMonthName } from '$lib/utils/date'
 
@@ -103,7 +104,7 @@
             type="button"
             onclick={() => handleDoneClick(id)}
             aria-label={`${label}. Completed. Action will remove the item.`}
-            class="flex justify-between w-full items-center py-1 px-4 cursor-pointer transition-colors"
+            class="flex justify-between w-full items-center py-1 px-4 cursor-pointer transition-colors hover:bg-red-200"
           >
             <span class="opacity-25 line-through">{label}</span>
             <span class="text-emerald-400 text-xl"><i class="fa-regular fa-face-smile"></i></span>
@@ -116,7 +117,7 @@
             type="button"
             onclick={() => handlePendingClick(id)}
             aria-label={`${label}. Pending. Action will mark the item as Done.`}
-            class="flex justify-between w-full items-center py-1 px-4 cursor-pointer transition-colors"
+            class="flex justify-between w-full items-center py-1 px-4 cursor-pointer transition-colors hover:bg-emerald-200"
           >
             <span>{label}</span>
             <span class="opacity-25 text-xl"><i class="fa-regular fa-face-meh"></i></span>

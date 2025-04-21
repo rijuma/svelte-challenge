@@ -58,6 +58,8 @@ This live version will be available until **feedback is returned** or until **Ma
 
 If there's any problem with this you can ask me to take it down at [marcos@rigoli.dev](mailto:marcos@rigoli.dev).
 
+> **Developer Note:** Animations for solutions **1** and **4** rely heavily on the new browsers [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API). I was hoping that by now Firefox was already implementing the feature but it seems like we will have to wait a bit longer. I've added a polyfill, but for the full experience I'd recommend testing it on Chrome.
+
 ### Deliverable
 
 This repository would probably be delivered by a compressed file.
@@ -84,6 +86,8 @@ To run this code locally please follow these steps:
 3. Start the server by running `npm run dev` and open the browser at [http://localhost:5173](http://localhost:5173).
 4. You should be able to see a home page with the details on the frontend test and a list of links to open each solution.
    > **Note:** To stop the server, just hit `Ctrl + C` in the terminal. Make sure to stop the server before closing the terminal window, otherwise the server process will remain open in the background.
+
+> The `Dockerfile`, the `compose.yml` and the `.env.example` are just part of the configuration for the server to be deployed.
 
 I've enjoyed working on the challenges. This was a quite large one (could it be considered like 8 challenges to be fair), I hope the hours I've dedicated and the attention to detail can be appreciated. Looking forward to working with you soon.
 
