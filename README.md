@@ -52,12 +52,7 @@ Specific instructions:
 
 ### Live version
 
-A live version for the solution is temporarily available at [https://revance-test.rigoli.dev](https://revance-test.rigoli.dev) password protected:
-
-```text
-user: svitla-revance
-password: frontend-test
-```
+A live version for the solution is temporarily available at [https://revance-test.rigoli.dev](https://revance-test.rigoli.dev).
 
 This live version will be available until **feedback is returned** or until **May 10th**. The intention is to have an easy preview for the challenge.
 
@@ -90,6 +85,6 @@ To run this code locally please follow these steps:
 4. You should be able to see a home page with the details on the frontend test and a list of links to open each solution.
    > **Note:** To stop the server, just hit `Ctrl + C` in the terminal. Make sure to stop the server before closing the terminal window, otherwise the server process will remain open in the background.
 
-I've enjoyed working on the challenges. Looking forward to working with you soon.
+I've enjoyed working on the challenges. This was a quite large one (could it be considered like 8 challenges to be fair), I hope the hours I've dedicated and the attention to detail can be appreciated. Looking forward to working with you soon.
 
 - Juan Marcos Rigoli

@@ -161,11 +161,8 @@
   A live version for the solution is temporarily available at
   <a href="https://revance-test.rigoli.dev" target="_blank" rel="noopener"
     >https://revance-test.rigoli.dev</a
-  > password protected:
+  >.
 </p>
-<pre><code>  user: svitla-revance
-  password: frontend-test
-</code></pre>
 
 <p>
   This live version will be available until <b>feedback is returned</b>
@@ -227,5 +224,14 @@
   </li>
 </ol>
 
-<p>I've enjoyed working on the challenges. Looking forward to working with you soon.</p>
+<blockquote>
+  The <code>Dockerfile</code>, the <code>compose.yml</code> and the <code>.env.example</code> are just
+  part of the configuration for the server to be deployed.
+</blockquote>
+
+<p>
+  I've enjoyed working on the challenges. This was a quite large one (could it be considered like 8
+  challenges to be fair), and I hope the hours I've dedicated and the attention to detail can be
+  appreciated. Looking forward to working with you soon.
+</p>
 <p>- Juan Marcos Rigoli</p>

@@ -6,4 +6,8 @@
   let { data, children }: { data: LayoutData; children: Snippet } = $props()
 </script>
 
+<svelte:head>
+  <meta name="robots" content="noindex, nofollow" />
+</svelte:head>
+
 {@render children()}
