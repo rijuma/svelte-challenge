@@ -104,12 +104,8 @@
       <td><a href="/vanilla/1-navigation/index.html" target="_blank">Open</a></td>
       <td><a href="/1-navigation" target="_blank">Open</a></td>
       <td
-        ><a href="/vanilla/1-navigation/preview.jpg" target="_blank"
-          ><img
-            width="200"
-            src="/vanilla/1-navigation/preview.jpg"
-            alt="1. Navigation hover reference"
-          /></a
+        ><a href="/img/preview-01.jpg" target="_blank"
+          ><img width="200" src="/img/preview-01.jpg" alt="1. Navigation hover reference" /></a
         ></td
       >
     </tr>
@@ -118,12 +114,8 @@
       <td><a href="/vanilla/2-gradient/index.html" target="_blank">Open</a></td>
       <td><a href="/2-gradient" target="_blank">Open</a></td>
       <td
-        ><a href="/vanilla/2-gradient/preview.jpg" target="_blank"
-          ><img
-            width="200"
-            src="/vanilla/2-gradient/preview.jpg"
-            alt="2. Gradient background reference"
-          /></a
+        ><a href="/img/preview-02.jpg" target="_blank"
+          ><img width="200" src="/img/preview-02.jpg" alt="2. Gradient background reference" /></a
         ></td
       >
     </tr>
@@ -132,12 +124,8 @@
       <td><a href="/vanilla/3-website/index.html" target="_blank">Open</a></td>
       <td><a href="/3-website" target="_blank">Open</a></td>
       <td
-        ><a href="/vanilla/3-website/preview.jpg" target="_blank"
-          ><img
-            width="200"
-            src="/vanilla/3-website/preview.jpg"
-            alt="3. Website Header reference"
-          /></a
+        ><a href="/img/preview-03.jpg" target="_blank"
+          ><img width="200" src="/img/preview-03.jpg" alt="3. Website Header reference" /></a
         ></td
       >
     </tr>
@@ -146,12 +134,8 @@
       <td><a href="/vanilla/4-to-do/index.html" target="_blank">Open</a></td>
       <td><a href="/4-to-do" target="_blank">Open</a></td>
       <td
-        ><a href="/vanilla/4-to-do/preview.jpg" target="_blank"
-          ><img
-            width="200"
-            src="/vanilla/4-to-do/preview.jpg"
-            alt="4. To do application reference"
-          /></a
+        ><a href="/img/preview-04.jpg" target="_blank"
+          ><img width="200" src="/img/preview-04.jpg" alt="4. To do application reference" /></a
         ></td
       >
     </tr>

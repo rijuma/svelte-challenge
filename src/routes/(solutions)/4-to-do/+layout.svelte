@@ -3,8 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Website tests - 4. To do application (Svelte)</title>
-
+  <title>04. To do application (Svelte)</title>
   <!-- FontAwesome regular icons -->
   <link
     rel="stylesheet"

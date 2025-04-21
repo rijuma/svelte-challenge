@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Website tests - 1. Navigation hover (Svelte)</title>
+  <title>01. Navigation hover (Svelte)</title>
 </svelte:head>
 
 <main

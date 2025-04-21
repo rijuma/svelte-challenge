@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Website tests - 2. Gradient background logo (Svelte)</title>
+  <title>02. Gradient background logo (Svelte)</title>
 </svelte:head>
 
 <main
