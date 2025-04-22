@@ -1,7 +1,7 @@
 <div>
   <section class="xl:flex xl:items-end">
     <div
-      class="relative min-h-[90dvh] xl:min-h-[100dvh] flex flex-col text-white justify-end max-xl:px-(--frame-spacing) max-xl:pt-[calc(var(--frame-spacing)*2)] box-border z-10 after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:via-transparent after:to-black/50 after:-z-10 xl:basis-3/5 xl:grow-0 xl:shrink-0 xl:pr-[calc(var(--frame-spacing)/2)] xl:pb-[calc(var(--frame-spacing)*2)] xl:pl-(--frame-spacing)"
+      class="relative min-h-[90dvh] xl:min-h-[100dvh] flex flex-col text-white justify-end max-xl:px-(--frame-spacing) max-xl:py-[calc(var(--frame-spacing)*2)] box-border z-10 after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:via-transparent after:to-black/50 after:-z-10 xl:basis-3/5 xl:grow-0 xl:shrink-0 xl:pr-[calc(var(--frame-spacing)/2)] xl:pb-[calc(var(--frame-spacing)*2)] xl:pl-(--frame-spacing)"
     >
       <img
         src="/img/01-01.jpg"
