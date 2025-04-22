@@ -189,6 +189,10 @@
   >.
 </p>
 
+<blockquote>
+  Vanilla HTML + CSS + JS versions are located in the repository's <code>static/vanilla/</code> folder.
+</blockquote>
+
 <h3>Deliverable</h3>
 
 <p>This repository would probably be delivered by a compressed file.</p>

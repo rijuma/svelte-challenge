@@ -86,11 +86,11 @@
       <span>Short Frayed Jacket</span>
     </div>
     <div
-      class="flex gap-8 px-4 pb-4 xl:flex-col xl:justify-end xl:basis-2/5 xl:pr-(--frame-spacing) xl:pb-(--frame-spacing) pl-[calc(var(--frame-spacing)/1.5)]"
+      class="flex gap-8 px-4 pb-4 xl:flex-col xl:justify-end xl:basis-2/5 xl:max-h-[100dvh] xl:pt-(--frame-spacing) xl:pr-(--frame-spacing) xl:pb-(--frame-spacing) pl-[calc(var(--frame-spacing)/1.5)]"
     >
       <div class="relative overflow-hidden flex-1 xl:flex xl:justify-end xl:pr-20 box-border">
         <img
-          class="max-w-full h-auto xl:w-3/5 max-xl:absolute max-xl:inset-0 xl:max-h-[60vh]"
+          class="max-w-full h-auto xl:w-3/5 max-xl:absolute max-xl:inset-0 object-cover"
           src="/img/01-02.jpg"
           alt="Alternative pose"
         />
