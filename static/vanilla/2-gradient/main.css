@@ -3,7 +3,7 @@
 :root {
   --logo-color: #505050;
   --card-bg: #fff;
-  --root-font-size: 75%; /* 12px */
+  --root-font-size: 100%; /* 16px */
 }
 
 @view-transition {
@@ -36,14 +36,22 @@ main {
 }
 
 .bing-logo {
-  display: block;
+  --size: min(26.75rem, 70vw);
+  position: relative;
+  display: grid;
+  place-items: center;
   background: var(--card-bg);
   color: var(--logo-color);
-  border-radius: 9rem;
+  border-radius: 32%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   text-decoration: none;
-  transition: all 0.5s ease;
+  transition:
+    scale 0.5s ease,
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
   transform: scale(1);
+  width: var(--size);
+  height: var(--size);
 
   @starting-style {
     box-shadow: none;
@@ -59,12 +67,13 @@ main {
 }
 
 .bing-logo figure {
+  max-width: 50%;
+  margin: auto;
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  width: 19rem;
-  height: 19rem;
-  padding: 3rem 1.5rem;
+  gap: 16%;
   aspect-ratio: 1 / 1;
 }
 
@@ -73,22 +82,17 @@ main {
  */
 .bing-logo svg {
   position: relative;
-  left: 16px;
-  top: 6px;
+  width: 100%;
+  left: 6%;
+  top: 3%;
 }
 
 .bing-logo figcaption {
   text-align: center;
-  font-size: 2.75rem;
+  font-size: min(2.75rem, 7vw);
 }
 
 .bing-logo img {
   width: 100%;
   height: auto;
-}
-
-@media only screen and (min-width: 60rem) {
-  :root {
-    --root-font-size: 100%; /* 16px */
-  }
 }
