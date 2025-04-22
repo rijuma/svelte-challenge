@@ -58,7 +58,9 @@ This live version will be available until **feedback is returned** or until **Ma
 
 If there's any problem with this you can ask me to take it down at [marcos@rigoli.dev](mailto:marcos@rigoli.dev).
 
-> **Developer Note:** Animations for solutions **1** and **4** rely heavily on the new browsers [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API). I was hoping that by now Firefox was already implementing the feature but it seems like we will have to wait a bit longer. I've added a polyfill, but for the full experience I'd recommend testing it on Chrome.
+> **Developer Notes:** Animations for solutions **1** and **4** rely heavily on the new browsers [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API). I was hoping that by now Firefox was already implementing the feature but it seems like we will have to wait a bit longer. I've added a polyfill, but for the full experience I'd recommend testing it on Chrome.
+
+> Vanilla HTML + CSS + JS versions are located in the repository's `static/vanilla/` folder.
 
 ### Deliverable
 

@@ -163,6 +163,9 @@
     will have to wait a bit longer. I've added a polyfill, but for the full experience I'd recommend
     testing it on Chrome.
   </p>
+  <p>
+    Vanilla HTML + CSS + JS versions are located in the repository's <code>static/vanilla/</code> folder.
+  </p>
 </blockquote>
 
 <h2>Delivery instructions</h2>
@@ -188,10 +191,6 @@
     rel="noopener">marcos@rigoli.dev</a
   >.
 </p>
-
-<blockquote>
-  Vanilla HTML + CSS + JS versions are located in the repository's <code>static/vanilla/</code> folder.
-</blockquote>
 
 <h3>Deliverable</h3>
 
