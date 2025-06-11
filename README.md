@@ -6,7 +6,7 @@ Svelte and Vanilla Frontend Challenge
 - Email: [marcos@rigoli.dev](mailto:marcos@rigoli.dev)
 - Contact info: https://rigoli.dev
 
-Live version: svelte-challenge.rigoli.dev
+Live version: https://svelte-challenge.rigoli.dev
 
 ## Challenge instructions
 
