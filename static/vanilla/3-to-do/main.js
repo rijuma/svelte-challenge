@@ -20,8 +20,6 @@ class TodoApp {
       try {
         const { done, pending } = JSON.parse(json)
 
-        console.log({ done, pending })
-
         this.#list = {
           done: done.map((item) => parse(item)),
           pending: pending.map((item) => parse(item)),
@@ -64,7 +62,6 @@ class TodoApp {
 
   #saveData = () => {
     const json = JSON.stringify(this.#list)
-    console.log({ json })
     localStorage.setItem(LS_KEY, json)
   }
 
