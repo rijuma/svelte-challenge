@@ -1,6 +1,4 @@
-# Revance Frontend Test
-
-Contractor firm: [Svitla](https://svitla.com)
+Frontend Test
 
 ## Developer info
 
@@ -8,14 +6,15 @@ Contractor firm: [Svitla](https://svitla.com)
 - Email: [marcos@rigoli.dev](mailto:marcos@rigoli.dev)
 - Contact info: https://rigoli.dev
 
+Live version: svelte-challenge.rigoli.dev
+
 ## Frontend Test instructions
 
 This coding challenge consists of four deliverables, the prompts are inside the `/prompts` folder were copied as received:
 
 1. Navigation hover
 2. Gradient background
-3. Website header
-4. To do application
+3. To do application
 
 For each folder, use the preview.jpg file as a reference and create a html / css / js version using the index.html (welcome to create external css / js file).
 
@@ -40,33 +39,13 @@ Specific instructions:
 
    - Recreate this gradient background with a centered logo.
 
-3. Website header
-
-   - Recreate this web design as close as possible. Responsive is a bonus.
-
-4. To do application
+3. To do application
 
    - Recreate this web design as close as possible. Please create a javascript application making the to do application interactive. You are welcome to do a version using your preferred JS framework as well.
 
-## Delivery instructions
-
-### Live version
-
-A live version for the solution is temporarily available at [https://revance-test.rigoli.dev](https://revance-test.rigoli.dev).
-
-This live version will be available until **feedback is returned** or until **May 10th**. The intention is to have an easy preview for the challenge.
-
-If there's any problem with this you can ask me to take it down at [marcos@rigoli.dev](mailto:marcos@rigoli.dev).
-
-> **Developer Notes:** Animations for solutions **1** and **4** rely heavily on the new browsers [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API). I was hoping that by now Firefox was already implementing the feature but it seems like we will have to wait a bit longer. I've added a polyfill, but for the full experience I'd recommend testing it on Chrome.
+> **Developer Notes:** Animations for solutions **1** and **3** rely heavily on the new browsers [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API). I was hoping that by now Firefox was already implementing the feature but it seems like we will have to wait a bit longer. I've added a polyfill, but for the full experience I'd recommend testing it on Chrome.
 
 > Vanilla HTML + CSS + JS versions are located in the repository's `static/vanilla/` folder.
-
-### Deliverable
-
-This repository would probably be delivered by a compressed file.
-
-A private repository for the solution will also be available at [https://github.com/rijuma/revance-svitla-frontend-test](https://github.com/rijuma/revance-svitla-frontend-test) <i>(please share a github account to give access to it)</i>.
 
 #### Run locally
 
@@ -74,11 +53,11 @@ To run this code locally please follow these steps:
 
 1. If you don't have the files already, clone this repository locally, for example by using the [github CLI](https://cli.github.com):
    ```text
-   git clone git@github.com:rijuma/revance-svitla-frontend-test.git
+   git clone git@github.com:rijuma/svelte-challenge.git
    ```
    Then, get into the folder by:
    ```text
-   cd revance-svitla-frontend-test
+   cd svelte-challenge
    ```
 2. Using a terminal on the extracted/cloned folder, install the dependencies by running:
    ```text
@@ -90,7 +69,3 @@ To run this code locally please follow these steps:
    > **Note:** To stop the server, just hit `Ctrl + C` in the terminal. Make sure to stop the server before closing the terminal window, otherwise the server process will remain open in the background.
 
 > The `Dockerfile`, the `compose.yml` and the `.env.example` are just part of the configuration for the server to be deployed.
-
-I've enjoyed working on the challenges. This was a quite large one (could it be considered like 8 challenges to be fair), I hope the hours I've dedicated and the attention to detail can be appreciated. Looking forward to working with you soon.
-
-- Juan Marcos Rigoli

@@ -1,18 +1,25 @@
-<h1>Revance Frontend Test</h1>
-
-<p>
-  Contractor firm: <a href="https://svitla.com" target="_blank" rel="noopener">Svitla</a>
-</p>
+<h1>Svelte and Vanilla Frontend Test</h1>
 
 <h2>Developer info</h2>
 
 <ul>
   <li>Name: <b>Juan Marcos Rigoli</b></li>
   <li>
-    Email: <a href="mailto:marcos@rigoli.dev" target="_blank" rel="noopener">marcos@rigoli.dev</a>
+    Email: <a href="mailto:marcos@rigoli.dev" target="_blank" rel="noopener noreferer"
+      >marcos@rigoli.dev</a
+    >
   </li>
   <li>
-    Contact info: <a href="https://rigoli.dev" target="_blank" rel="noopener">https://rigoli.dev</a>
+    Contact info: <a href="https://rigoli.dev" target="_blank" rel="noopener noreferer"
+      >https://rigoli.dev</a
+    >
+  </li>
+  <li>
+    Repository: <a
+      href="https://github.com/rijuma/svelte-challenge"
+      target="_blank"
+      rel="noopener noreferer">https://github.com/rijuma/svelte-challenge</a
+    >
   </li>
 </ul>
 
@@ -27,7 +34,6 @@
 <ol>
   <li>Navigation hover</li>
   <li>Gradient background</li>
-  <li>Website header</li>
   <li>To do application</li>
 </ol>
 
@@ -67,12 +73,6 @@
     <p>Gradient background logo</p>
     <ul>
       <li>Recreate this gradient background with a centered logo.</li>
-    </ul>
-  </li>
-  <li>
-    <p>Website header</p>
-    <ul>
-      <li>Recreate this web design as close as possible. Responsive is a bonus.</li>
     </ul>
   </li>
   <li>
@@ -120,22 +120,12 @@
       >
     </tr>
     <tr>
-      <th>3. Website</th>
-      <td><a href="/vanilla/3-website/index.html" target="_blank">Open</a></td>
-      <td><a href="/3-website" target="_blank">Open</a></td>
-      <td
-        ><a href="/img/preview-03.jpg" target="_blank"
-          ><img width="200" src="/img/preview-03.jpg" alt="3. Website Header reference" /></a
-        ></td
-      >
-    </tr>
-    <tr>
-      <th>4. To do</th>
-      <td><a href="/vanilla/4-to-do/index.html" target="_blank">Open</a></td>
+      <th>3. To do</th>
+      <td><a href="/vanilla/3-to-do/index.html" target="_blank">Open</a></td>
       <td><a href="/4-to-do" target="_blank">Open</a></td>
       <td
-        ><a href="/img/preview-04.jpg" target="_blank"
-          ><img width="200" src="/img/preview-04.jpg" alt="4. To do application reference" /></a
+        ><a href="/img/preview-03.jpg" target="_blank"
+          ><img width="200" src="/img/preview-03.jpg" alt="3. To do application reference" /></a
         ></td
       >
     </tr>
@@ -150,15 +140,15 @@
     <a
       href="https://tailwindcss.com/docs/theme#default-theme-variable-reference"
       target="_blank"
-      rel="noopener">Tailwind's default design tokens</a
+      rel="noopener noreferer">Tailwind's default design tokens</a
     > on the Tailwind version.
   </p>
   <p>
-    Animations for solution <b>1</b> and solution <b>4</b> rely heavily on the new browsers
+    Animations for solution <b>1</b> and solution <b>3</b> rely heavily on the new browsers
     <a
       href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API"
       target="_blank"
-      rel="noopener">View Transition API</a
+      rel="noopener noreferer">View Transition API</a
     >. I was hoping that by now Firefox was already implementing the feature but it seems like we
     will have to wait a bit longer. I've added a polyfill, but for the full experience I'd recommend
     testing it on Chrome.
@@ -168,60 +158,24 @@
   </p>
 </blockquote>
 
-<h2>Delivery instructions</h2>
-
-<h3>Live version</h3>
-
-<p>
-  A live version for the solution is temporarily available at
-  <a href="https://revance-test.rigoli.dev" target="_blank" rel="noopener"
-    >https://revance-test.rigoli.dev</a
-  >.
-</p>
-
-<p>
-  This live version will be available until <b>feedback is returned</b>
-  or until <b>May 10th</b>. The intention is to have an easy preview for the challenge.
-</p>
-
-<p>
-  If there's any problem with this you can ask me to take it down at <a
-    href="mailto:marcos@rigoli.dev"
-    target="_blank"
-    rel="noopener">marcos@rigoli.dev</a
-  >.
-</p>
-
-<h3>Deliverable</h3>
-
-<p>This repository would probably be delivered by a compressed file.</p>
-
-<p>
-  A private repository for the solution will also be available at
-  <a href="https://github.com/rijuma/revance-svitla-frontend-test" target="_blank" rel="noopener"
-    >https://github.com/rijuma/revance-svitla-frontend-test</a
-  >
-  <i>(please share a github account to give access to it)</i>.
-</p>
-
-<h4>Run locally</h4>
+<h2>Run locally</h2>
 
 <p>To run this code locally please follow these steps:</p>
 
 <ol>
   <li>
     If you don't have the files already, clone this repository locally, for example by using the
-    <a href="https://cli.github.com" target="_blank" rel="noopener">github CLI</a>:
-    <pre><code>git clone git@github.com:rijuma/revance-svitla-frontend-test.git</code></pre>
+    <a href="https://cli.github.com" target="_blank" rel="noopener noreferer">github CLI</a>:
+    <pre><code>git clone git@github.com:rijuma/svelte-challenge.git</code></pre>
     Then, get into the folder by:
-    <pre><code>cd revance-svitla-frontend-test</code></pre>
+    <pre><code>cd svelte-challenge</code></pre>
   </li>
   <li>
     Using a terminal on the extracted/cloned folder, install the dependencies by running:
     <pre><code>npm install</code></pre>
     <blockquote>
       <b>Note:</b> Check <b>npm</b> documentation
-      <a href="https://www.npmjs.com" target="_blank" rel="noopener">here</a> if needed.
+      <a href="https://www.npmjs.com" target="_blank" rel="noopener noreferer">here</a> if needed.
     </blockquote>
   </li>
   <li>
@@ -243,10 +197,3 @@
   The <code>Dockerfile</code>, the <code>compose.yml</code> and the <code>.env.example</code> are just
   part of the configuration for the server to be deployed.
 </blockquote>
-
-<p>
-  I've enjoyed working on the challenges. This was a quite large one (could it be considered like 8
-  challenges to be fair), and I hope the hours I've dedicated and the attention to detail can be
-  appreciated. Looking forward to working with you soon.
-</p>
-<p>- Juan Marcos Rigoli</p>

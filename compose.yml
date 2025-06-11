@@ -1,7 +1,7 @@
 services:
-  revance-test.rigoli.dev:
-    container_name: revance-test.rigoli.dev
-    image: revance-test.rigoli.dev
+  svelte-challenge.rigoli.dev:
+    container_name: svelte-challenge.rigoli.dev
+    image: svelte-challenge.rigoli.dev
     restart: unless-stopped
     build:
       context: .

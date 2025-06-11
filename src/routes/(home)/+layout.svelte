@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-  <title>Revance Frontend Test by Marcos Rigoli</title>
+  <title>Svelte Frontend Test by Marcos Rigoli</title>
 </svelte:head>
 
 {@render children()}
