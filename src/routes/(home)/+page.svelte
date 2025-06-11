@@ -1,4 +1,4 @@
-<h1>Svelte and Vanilla Frontend Test</h1>
+<h1>Svelte and Vanilla Frontend Challenge</h1>
 
 <h2>Developer info</h2>
 
@@ -23,7 +23,7 @@
   </li>
 </ul>
 
-<h2>Frontend Test instructions</h2>
+<h2>Frontend Challenge instructions</h2>
 
 <p>
   This coding challenge consists of four deliverables, the prompts are inside the <code

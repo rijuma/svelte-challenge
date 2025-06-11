@@ -1,4 +1,4 @@
-Frontend Test
+Svelte and Vanilla Frontend Challenge
 
 ## Developer info
 
@@ -8,7 +8,7 @@ Frontend Test
 
 Live version: svelte-challenge.rigoli.dev
 
-## Frontend Test instructions
+## Challenge instructions
 
 This coding challenge consists of four deliverables, the prompts are inside the `/prompts` folder were copied as received:
 
